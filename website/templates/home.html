@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <script src="{% static 'script.js'%}" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Alugue roupas - Evolution</h1>
+    <h2>Olá {{ nome }}</h2>
+    <h3>Idade: {{idade}}</h3>
+    
+    {% if idade >= 18 %}
+    <h4>Adulto</h4>
+
+    {% else %}
+    <h4>Criança</h4>
+
+    {% endif %}
+
+    <ul>
+        <p>Roupas</p>
+        {% for roupa in  roupas %}
+            <li> {{roupa}} </li>
+        {% endfor %}
+    </ul>
+
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+
+    <img src="{% static 'images/roupas.jpg' %}" alt="roupas">
+</body>
+</html>
