@@ -18,3 +18,6 @@ def home(req):
         'idade': idade
     }
     return render(req, 'home.html', args)
+
+def produtos(req):
+    return render(req, 'produtos.html')
