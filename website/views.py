@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from website.forms import PedidoForm
 # Create your views here.
 def home(req):
     nome = 'Groger'
@@ -21,3 +21,14 @@ def home(req):
 
 def produtos(req):
     return render(req, 'produtos.html')
+
+def cadastro_pedido(req):
+    form = PedidoForm(req.POST or None)
+
+    if form.is_valid():
+        form.save()
+    
+    context = {
+        'form': form
+    }
+    return render(req, 'pedido.html', context)
