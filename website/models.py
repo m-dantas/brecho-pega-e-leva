@@ -15,6 +15,7 @@ class Produto(models.Model):
     disponivel = models.BooleanField(default=True)
     quantidade = models.IntegerField(default=1)
     tamanho = models.CharField(max_length=2, choices=opcoes_tamanho)
+    imagem = models.ImageField()
 
     def __str__(self):
         return self.nome
