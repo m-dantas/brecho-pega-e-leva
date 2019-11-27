@@ -4,10 +4,12 @@
 {% block content %}
     <h1>Produtos</h1>
     {% for produto in produtos %}
-        
+    <div>  
+        <img src="../../{{produto.imagem.url}}"  width="150" height="150">
         <p>Nome: {{produto.nome}}</p>
         <p>Preco: {{produto.preco}}</p>
         <p>Quantidade: {{produto.quantidade}}</p>
+    </div>    
         <hr>
     {% endfor %}
 {% endblock %}
